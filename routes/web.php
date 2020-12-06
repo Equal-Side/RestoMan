@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Public routes
+
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('home', 'HomeController@redirect');
