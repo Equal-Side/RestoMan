@@ -927,7 +927,11 @@ section {
   font-weight: 700;
   color: #ff9b08;
 }
-
+.menu .menu-content i {
+  font-weight: 700;
+  color: #ff9b08;
+  cursor: pointer;
+}
 .menu .menu-content span {
   background: #fff;
   position: relative;

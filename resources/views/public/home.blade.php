@@ -1,5 +1,7 @@
 @extends('public.layout')
-
+@section('navbar')
+    @include('public.navbar-light')
+@endsection
 @section('content')
     <section id="hero">
         <div class="hero-container">
@@ -14,7 +16,7 @@
                     </p>
                     <div>
                     <input type="number" class="animate__animated animate__fadeInUp scrollto" placeholder="Enter table code"/>
-                    <a href="#" class="btn-order animate__animated animate__fadeInUp scrollto">Order Now</a>
+                    <a href="{{ route('menu') }}" class="btn-order animate__animated animate__fadeInUp scrollto">Order Now</a>
                     </div>
                 </div>
                 </div>

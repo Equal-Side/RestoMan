@@ -15,6 +15,10 @@ class HomeController extends Controller
     {
         return view('public.home');
     }
+    public function menu()
+    {
+        return view('public.menu');
+    }
 
     public function redirect()
     {
