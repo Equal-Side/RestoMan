@@ -3,6 +3,7 @@
 //Public routes
 
 Route::get('/', 'HomeController@index')->name('index');
+Route::get('/menu', 'HomeController@menu')->name('menu');
 
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('home', 'HomeController@redirect');
