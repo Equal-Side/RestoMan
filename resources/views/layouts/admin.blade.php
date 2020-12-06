@@ -22,6 +22,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     @yield('styles')
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
@@ -96,8 +98,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript"
+        src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+        <script>
+        var alanBtnInstance = alanBtn({
+            key: "5f4fe7aa1613846079ac54e325281e942e956eca572e1d8b807a3e2338fdd0dc/stage",
+            onCommand: function (commandData) {
+            if (commandData.command === "go:back") {
+                //call client code that will react on the received command
+            }
+            },
+            rootEl: document.getElementById("alan-btn"),
+        });
+        </script>
+
+        <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script >
+
+            var d = new Date();
+            var curr_month = d.getMonth()+1;
+
+            var months = ['Dec 1', 'Dec 2','Dec 3','Dec 4','Dec 5','Dec 6','Dec 7']
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Orders',
+                    borderColor: '#007bff',
+                    data:[123,45,34,34,56,67,23,56,]
+                },
+                {
+                    label: 'Customers',
+                    borderColor: '#5cb85c',
+                    data:[3,45,54,123,6,77,22,59,]
+                },
+                {
+                    label: 'Reservations',
+                    borderColor: '#f0ad4e',
+                    data:[12,23,56,67,23,56,45,54,]
+                },
+
+            ]
+            },
 
 
-</body>
+
+            // Configuration options go here
+            options: {}
+            });
+          </script>
+
+<script>
+    function numberWithCommas(x) {
+               return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    var ctx = document.getElementById('myBar');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Fried Chicken','KFC','Kabab','Shashlik','Tandir','Palov','Qazi'] ,
+            datasets: [{
+                label: 'Dishes',
+                data: [23,45,23,45,67,34,56],
+                borderColor: '#007bff',
+
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    </body>
 
 </html>

@@ -29,5 +29,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
 
+    Route::get('kitchen', 'KitchenController@index')->name('kitchen');
+
+    Route::get('add_order', 'OrderController@index_add_order')->name('add_order');
+    Route::get('all_order', 'OrderController@index_all_orders')->name('all_order');
+    Route::get('non_paid_orders', 'OrderController@index_non_paid_order')->name('non_paid_order');
+
 });
 
